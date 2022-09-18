@@ -2,11 +2,10 @@
 import styled from "styled-components";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
+import "./App.css";
 
 const Container = styled.div`
   display: flex;
-  margin: 0px;
-  padding: 0px;
 `;
 
 const MainCont = styled.div`

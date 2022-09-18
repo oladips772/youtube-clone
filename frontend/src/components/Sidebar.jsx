@@ -1,6 +1,9 @@
 /** @format */
 import styled from "styled-components";
-import HomeIcon from "@mui/icons-material/Home";
+import { AiFillHome } from "react-icons/ai";
+import { BsCompass } from "react-icons/bs";
+import { HiOutlineSaveAs } from "react-icons/hi";
+import {MdOutlineVideoLibrary} from "react-icons/md"
 
 const Container = styled.div`
   flex: 1;
@@ -35,7 +38,13 @@ const Item = styled.div`
   padding: 5px;
   margin: 8px 0px;
   cursor: pointer;
+  gap: 20px;
+  font-weight:bold;
 `;
+
+const HR = styled.hr`
+  height:0.3px;
+`
 
 function Sidebar() {
   return (
@@ -49,8 +58,21 @@ function Sidebar() {
           Youtube
         </Logo>
         <Item>
-          <HomeIcon/>  
+          <AiFillHome />
           Home
+        </Item>
+        <Item>
+          <BsCompass />
+          Explore
+        </Item>
+        <Item>
+          <HiOutlineSaveAs />
+          Subsciptions
+        </Item>
+        <HR />
+        <Item>
+          <MdOutlineVideoLibrary />
+          Library
         </Item>
       </Wrapper>
     </Container>
