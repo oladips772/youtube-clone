@@ -2,14 +2,23 @@
 import styled from "styled-components";
 import { AiFillHome } from "react-icons/ai";
 import { BsCompass } from "react-icons/bs";
-import { HiOutlineSaveAs } from "react-icons/hi";
-import {MdOutlineVideoLibrary} from "react-icons/md"
+import { GiGamepad } from "react-icons/gi";
+import {
+  MdOutlineVideoLibrary,
+  MdHistory,
+  MdSubscriptions,
+  MdOutlineAccountCircle,
+  MdOutlineLibraryMusic,
+  MdOutlineSportsBasketball,
+} from "react-icons/md";
+import { BiMovie } from "react-icons/bi";
+import { AiOutlineSetting } from "react-icons/ai";
 
 const Container = styled.div`
   flex: 1;
-  background: #000;
+  background: ${({ theme }) => theme.bg};
   height: 100vh;
-  color: white;
+  color: ${({ theme }) => theme.text};
   margin: 0;
   padding: 0;
 `;
@@ -39,14 +48,28 @@ const Item = styled.div`
   margin: 8px 0px;
   cursor: pointer;
   gap: 20px;
-  font-weight:bold;
+  font-weight: bold;
 `;
 
 const HR = styled.hr`
-  height:0.3px;
-`
+  border: 0.3px solid ${({ theme }) => theme.soft};
+`;
 
-function Sidebar() {
+const LoginDiv = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 6.5px;
+  margin: 8px 0px;
+  cursor: pointer;
+  gap: 20px;
+  font-weight: bold;
+  border: 1px solid lightgreen;
+  border-radius: 4px;
+  color: lightgreen;
+  width: 100px;
+`;
+
+function Sidebar({changeTheme}) {
   return (
     <Container>
       <Wrapper>
@@ -58,21 +81,52 @@ function Sidebar() {
           Youtube
         </Logo>
         <Item>
-          <AiFillHome />
+          <AiFillHome size={21} />
           Home
         </Item>
         <Item>
-          <BsCompass />
+          <BsCompass size={21} />
           Explore
         </Item>
         <Item>
-          <HiOutlineSaveAs />
+          <MdSubscriptions size={21} />
           Subsciptions
         </Item>
         <HR />
         <Item>
-          <MdOutlineVideoLibrary />
+          <MdOutlineVideoLibrary size={21} />
           Library
+        </Item>
+        <Item>
+          <MdHistory size={21} />
+          History
+        </Item>
+        <HR />
+        <LoginDiv>
+          <MdOutlineAccountCircle size={21} />
+          Sign in
+        </LoginDiv>
+        <HR />
+        <Item>Best of Youtube </Item>
+        <Item>
+          <MdOutlineLibraryMusic size={21} />
+          Music
+        </Item>
+        <Item>
+          <MdOutlineSportsBasketball size={21} />
+          Music
+        </Item>
+        <Item>
+          <GiGamepad size={21} />
+          Gaming
+        </Item>
+        <Item>
+          <BiMovie size={21} />
+          Movies
+        </Item>
+        <Item onClick={changeTheme}>
+          <AiOutlineSetting size={21} />
+          Lightmode
         </Item>
       </Wrapper>
     </Container>
