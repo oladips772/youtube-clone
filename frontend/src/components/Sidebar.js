@@ -37,7 +37,7 @@ const Logo = styled.div`
   font-size: 20px;
   cursor: pointer;
   margin-bottom: 18px;
-  color:white;
+  color: ${({ theme }) => theme.text};
 `;
 
 const Image = styled.img`
