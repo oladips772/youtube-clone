@@ -3,6 +3,8 @@ import { AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
 import { IoMdShareAlt } from "react-icons/io";
 import React from "react";
 import styled from "styled-components";
+import Comments from "../components/Comments";
+import Card2 from "../components/Card2";
 
 const Container = styled.div`
   display: flex;
@@ -73,7 +75,9 @@ const ChannelCounter = styled.span`
   font-weight: 500;
 `;
 
-const ChannelName = styled.h3``;
+const ChannelName = styled.h3`
+  font-weight: bold;
+`;
 
 const Subscribe = styled.button`
   height: 37px;
@@ -84,7 +88,7 @@ const Subscribe = styled.button`
   font-size: 17px;
   font-weight: 600;
   border: none;
-  cursor:pointer;
+  cursor: pointer;
 `;
 
 function Video() {
@@ -140,8 +144,14 @@ function Video() {
           </ChannelInfo>
           <Subscribe>Subscribe</Subscribe>
         </Channel>
+        <Comments />
       </Content>
-      <Recommendation>recomendation</Recommendation>
+      <Recommendation>
+        <Card2 />
+        <Card2 />
+        <Card2 />
+        <Card2 />
+      </Recommendation>
     </Container>
   );
 }

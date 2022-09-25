@@ -70,7 +70,7 @@ const LoginDiv = styled.div`
   border: 1px solid lightgreen;
   border-radius: 4px;
   color: lightgreen;
-  width: 100px;
+  width: 140px;
 `;
 
 function Sidebar({ changeTheme }) {
@@ -86,7 +86,6 @@ function Sidebar({ changeTheme }) {
             Youtube
           </Logo>
         </Link>
-
         <Item>
           <AiFillHome size={21} />
           Home
