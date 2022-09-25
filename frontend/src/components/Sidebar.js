@@ -13,7 +13,7 @@ import {
 } from "react-icons/md";
 import { BiMovie } from "react-icons/bi";
 import { AiOutlineSetting } from "react-icons/ai";
-
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   flex: 1;
@@ -22,14 +22,14 @@ const Container = styled.div`
   color: ${({ theme }) => theme.text};
   margin: 0;
   padding: 0;
-  position:sticky;
-  top:0;
+  position: sticky;
+  top: 0;
 `;
 
 const Wrapper = styled.div`
   padding: 18px 26px;
 `;
-  
+
 const Logo = styled.div`
   display: flex;
   align-items: center;
@@ -37,6 +37,7 @@ const Logo = styled.div`
   font-size: 20px;
   cursor: pointer;
   margin-bottom: 18px;
+  color:white;
 `;
 
 const Image = styled.img`
@@ -72,17 +73,20 @@ const LoginDiv = styled.div`
   width: 100px;
 `;
 
-function Sidebar({changeTheme}) {
+function Sidebar({ changeTheme }) {
   return (
     <Container>
       <Wrapper>
-        <Logo>
-          <Image
-            src="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png"
-            alt=""
-          />
-          Youtube
-        </Logo>
+        <Link to="/">
+          <Logo>
+            <Image
+              src="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png"
+              alt=""
+            />
+            Youtube
+          </Logo>
+        </Link>
+
         <Item>
           <AiFillHome size={21} />
           Home
