@@ -14,9 +14,10 @@ import {
 import { BiMovie } from "react-icons/bi";
 import { AiOutlineSetting } from "react-icons/ai";
 
+
 const Container = styled.div`
   flex: 1;
-  background: ${({ theme }) => theme.bg};
+  background: ${({ theme }) => theme.bgLighter};
   height: 100vh;
   color: ${({ theme }) => theme.text};
   margin: 0;
@@ -26,7 +27,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   padding: 18px 26px;
 `;
-
+  
 const Logo = styled.div`
   display: flex;
   align-items: center;

@@ -5,6 +5,9 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import "./App.css";
 import { darkTheme, lightTheme } from "./utils/Theme";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import Video from "./Pages/Video";
 
 const Container = styled.div`
   display: flex;
@@ -12,6 +15,7 @@ const Container = styled.div`
 
 const MainCont = styled.div`
   flex: 7;
+  background: whitesmoke;
 `;
 
 const Wrapper = styled.div``;
@@ -30,13 +34,24 @@ function App() {
 
   return (
     <ThemeProvider theme={Theme}>
-      <Container>
-        <Sidebar changeTheme={changeTheme} />
-        <MainCont>
-          <Navbar />
-          <Wrapper>video cards</Wrapper>
-        </MainCont>
-      </Container>
+      <BrowserRouter>
+        <Container>
+          <Sidebar changeTheme={changeTheme} />
+          <MainCont>
+            <Navbar />
+            <Wrapper>
+              <Routes>
+                <Route path="/">
+                  <Route index element={<Home />} />
+                  <Route path="video">
+                    <Route path=":id" element={<Video />} />
+                  </Route>
+                </Route>
+              </Routes>
+            </Wrapper>
+          </MainCont>
+        </Container>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
