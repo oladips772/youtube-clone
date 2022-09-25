@@ -22,6 +22,8 @@ const Container = styled.div`
   color: ${({ theme }) => theme.text};
   margin: 0;
   padding: 0;
+  position:sticky;
+  top:0;
 `;
 
 const Wrapper = styled.div`
